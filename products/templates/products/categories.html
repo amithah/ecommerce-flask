@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block navlist %}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Add products
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="{{url_for('products.addproduct')}}">Add product</a>
+      <a class="dropdown-item" href="{{url_for('products.addbrand')}}">add brand</a>
+      <a class="dropdown-item" href="{{url_for('products.addcategory')}}">add category</a>
+    </div>
+  </li>
+{%endblock%}
+{%block main%}
+<div class="container">
+    <table class="table table-sm">
+        <thead>
+            <th>Sl. No</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+ 
+        </thead>
+        <tbody>
+            {%for category in categories%}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{category.name}}</td>
+                
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+{%endblock%}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Login{% endblock %}
+
+
+{% block main %}
+
+<div class="row text-center padding">
+
+    <div class="col row justify-content-center ">
+        <form class="form form-horizontal" method="post" role="form">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.username) }}
+            {{ wtf.form_field(form.password) }}
+            {{ wtf.form_field(form.remember_me) }}
+            <input class="btn btn-primary" type="submit" value="Login">
+          </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+html{
+    font-size: 20px;
+}
+html,body{
+    height: 100%;
+}
+.padding{
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+
+
+/******************************************************************/
+/*heading*/
+h1{
+    font-weight: 200;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+}
+.magic ,h3{
+    color: rgb(24, 3, 44);
+    text-transform: uppercase;
+    text-shadow: 1px 2px 20px #07575b;
+    font-family: 'Anton', sans-serif;
+
+}
+p{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.25rem;
+}
+/********************************************************/
+/*carousal centering*/
+.carousel-inner img{
+    max-width:1200px;
+    max-height: 600px !important;
+    margin: auto;
+}
+/********************************************************/
+/*navbar button*/
+.navbar-custom,.btn-custom{
+    background-color:black;
+    font-family: 'Anton', sans-serif;
+}
+.navbar-custom a{
+   color: white;
+   padding: 0 2rem 0 2rem;
+}
+/**********************************************************/
+/*image container*/
+
+.img-container{
+    transform: translateY(60%)
+}
+/*footer styling*/
+footer {
+    background-color:black;
+}
+footer p,h5{
+    color: white;
+    font-size: 0.9rem;
+}
+footer hr {
+    border: solid 0.1rem white ;
+    
+}
+/******************************************************************/
+/******************************************************************/
+/*login form*/
+form{
+    text-align: justify;
+}
+/******************************************************************/
+/******************************************************************/
+.blog-box{
+    border: #07575b solid 0.5rem;
+}

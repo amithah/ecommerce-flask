@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Add product{% endblock %}
+
+
+{% block main %}
+
+<div class="row text-center padding">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8 row justify-content-center ">
+        
+        <form class="form form-horizontal" enctype="multipart/form-data" method="post" role="form">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.name) }}
+            {{ wtf.form_field(form.price) }}
+            {{ wtf.form_field(form.discount) }}
+            {{ wtf.form_field(form.stock) }}
+            {{ wtf.form_field(form.colors) }}
+            {{ wtf.form_field(form.discription) }}
+            <!--adding select field to choose from brands-->
+            <label for="brand">Add a brand</label>
+            <select name="brand" id="brand" class="=form-control" required>
+                <option value=""Select a brand>
+                    {%for brand in brands%}
+                    <option value="{{brand.id}}">{{brand.name}}</option>
+                    {%endfor%}
+                </option>
+            </select>
+              <!--adding select field to choose from categories-->
+            <label for="category">Add a category</label>
+            <select name="category" id="category" class="=form-control" required>
+                <option value=""Select a category>
+                    {%for category in categories%}
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    {%endfor%}
+                </option>
+            </select>
+
+            <div class="container">
+                <div class="col-md-4">
+                    {{ wtf.form_field(form.image_1) }}
+                </div>
+                <div class="col-md-4 ">
+                    {{ wtf.form_field(form.image_2) }}
+                </div>
+                <div class="col-md-4">
+                    {{ wtf.form_field(form.image_3) }}
+                </div>
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Add product">
+        </form>
+
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+
+{% endblock %}
